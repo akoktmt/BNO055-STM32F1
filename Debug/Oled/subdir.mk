@@ -5,23 +5,29 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../BNO055/bno055.c 
+../Oled/fonts.c \
+../Oled/ssd1306.c \
+../Oled/test.c 
 
 OBJS += \
-./BNO055/bno055.o 
+./Oled/fonts.o \
+./Oled/ssd1306.o \
+./Oled/test.o 
 
 C_DEPS += \
-./BNO055/bno055.d 
+./Oled/fonts.d \
+./Oled/ssd1306.d \
+./Oled/test.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-BNO055/%.o BNO055/%.su BNO055/%.cyclo: ../BNO055/%.c BNO055/subdir.mk
+Oled/%.o Oled/%.su Oled/%.cyclo: ../Oled/%.c Oled/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../BNO055 -I../Oled -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 
-clean: clean-BNO055
+clean: clean-Oled
 
-clean-BNO055:
-	-$(RM) ./BNO055/bno055.cyclo ./BNO055/bno055.d ./BNO055/bno055.o ./BNO055/bno055.su
+clean-Oled:
+	-$(RM) ./Oled/fonts.cyclo ./Oled/fonts.d ./Oled/fonts.o ./Oled/fonts.su ./Oled/ssd1306.cyclo ./Oled/ssd1306.d ./Oled/ssd1306.o ./Oled/ssd1306.su ./Oled/test.cyclo ./Oled/test.d ./Oled/test.o ./Oled/test.su
 
-.PHONY: clean-BNO055
+.PHONY: clean-Oled
 

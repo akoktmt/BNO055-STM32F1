@@ -24,3 +24,6 @@
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+"./Oled/fonts.o"
+"./Oled/ssd1306.o"
+"./Oled/test.o"
