@@ -1,0 +1,3 @@
+../Core/Src/freertos.c:90:6:MX_FREERTOS_Init	192	static
+../Core/Src/freertos.c:155:6:ReadBNO	16	static
+../Core/Src/freertos.c:176:6:Send_CAN	32	static

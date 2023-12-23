@@ -23,6 +23,8 @@
  *  > `bool`: `true` if none of the init steps fail, `false` else
  * ---------------------------------------------------------------
  */
+
+
 error_bno bno055_init(bno055_t* imu) {
     u8 id = 0;
     error_bno err;
